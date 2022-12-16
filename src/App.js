@@ -15,8 +15,9 @@ function App() {
     const [budget, setBudget] = useState(0);
     const [remainingBudget, setRemainingBudget] = useState(0);
 
-    const updateBudget = (e) => {
-        setBudget(e.target.value);
+    const updateBudget = (value) => {
+        console.log("value: %O", value);
+        setBudget(value);
         let totalSpend = 0;
 
         for (let i = 0; i < people.length; i++) {
@@ -61,9 +62,9 @@ function App() {
                 Gift Givers
             </header>
             <Container>
-                <Row class="budget">
+                <Row className="budget">
                     <Col>
-                        <span class="budget-label">Budget:</span>
+                        <span className="budget-label">Budget:</span>
                         <Form.Control
                             class="budget-input"
                             type="number"
@@ -73,7 +74,7 @@ function App() {
                             min="0"
                             required
                         />
-                        <div class="remaining-budget">
+                        <div className="remaining-budget">
                             <span
                                 className={remainingBudget < 0 ? "text-danger" : null}> Remaining: {remainingBudget}</span>
                         </div>
