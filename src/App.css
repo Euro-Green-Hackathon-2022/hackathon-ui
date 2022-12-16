@@ -1,5 +1,13 @@
+body {
+  background-color: #282c34;
+  min-height: 1vh;
+  height: 1vh;
+}
+
 .App {
   text-align: center;
+  background: #282c34;
+  min-height: 1vh;
 }
 
 .App-logo {
@@ -34,4 +42,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.person-card {
+  margin-bottom: 50px;
+}
+
+.card * {
+  color: black!important;
+}
+
+.budget, .remaining-budget {
+  color: white;
+}
+.remaining-budget {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.budget-label{color: white;}
+.budget input, .budget .span {
+  color: white;
+  max-width: 100px;
+  margin-right:50px;
+  display: inline-block;
+}
+
+.budget-input {
+  max-width: 50px;
 }

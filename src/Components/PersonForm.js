@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function PersonForm() {
+
+export default function PersonForm({addPerson}) {
     const [name, setName] = useState('');
     const [relation, setRelation] = useState('');
     const [age, setAge] = useState('');
@@ -12,18 +13,19 @@ function PersonForm() {
     const handleSubmit= (e) => {
         e.preventDefault();
 
-        // save fields
+        addPerson({
+            name,
+            relation,
+            age,
+            maxPrice,
+            keywords
+        });
 
-        // wipe the form
-
-        // send http request for suggestions
-
-        // create card with suggestions and search results
-
-
-        const request = `Suggest Christmas gifts for a ${relation} aged ${age}, who likes ${keywords}, under ${maxPrice} euro as single words`;
-
-        console.log("Request: %O", request);
+        setName("");
+        setRelation("");
+        setAge("");
+        setMaxPrice(0);
+        setKeywords("");
     }
 
     return (
@@ -94,4 +96,3 @@ function PersonForm() {
         </Form>
     );
 }
-export default PersonForm;
